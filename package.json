@@ -10,6 +10,10 @@
     "react-scripts": "1.0.17",
     "redux": "^3.7.2"
   },
+  "devDependencies": {
+    "eslint": "^4.13.0",
+    "eslint-plugin-json": "^1.2.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
