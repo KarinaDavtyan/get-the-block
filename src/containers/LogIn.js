@@ -14,11 +14,12 @@ class LogIn extends Component {
 
   render() {
     return (
-      <div className="LogIn">
+      <div>
         <RaisedButton
           primary
           label="Log in with Twitter"
-          onClick={this.login}
+          fullWidth={true}
+          // onClick={this.login}
         />
       </div>
     );

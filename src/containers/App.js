@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import LogIn from './LogIn';
 import cred from './cred';
+
+const muiTheme = getMuiTheme({
+	palette: {
+	    primary1Color: '#1DA1F2',
+			// fontFamily: 'Helvetica Neue',
+		}
+});
 
 class App extends Component {
 
@@ -28,19 +36,24 @@ class App extends Component {
 	renderImage = () => {
 		if (this.state.imgs) {
 			return (
-				<div className="background">
-					<img src={this.state.imgs.urls.raw} />
-				</div>
+				<img
+          src={this.state.imgs.urls.raw}
+          height={window.innerHeight}
+          width={window.innerWidth} />
 			)
 		}
 	}
 
   render() {
     return (
-      <MuiThemeProvider>
+      <MuiThemeProvider muiTheme={muiTheme}>
         <div className="App">
-          <LogIn />
-					{this.renderImage()}
+					<div className="LogIn">
+						<LogIn />
+					</div>
+					<div className="background">
+						{this.renderImage()}
+					</div>
         </div>
       </MuiThemeProvider>
     );
