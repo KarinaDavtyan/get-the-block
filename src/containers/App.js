@@ -21,27 +21,26 @@ class App extends Component {
 		};
 	}
 
-	componentDidMount() {
-		fetch('https://api.unsplash.com/photos/random/?client_id=' + cred.APP_ID)
-			.then(res => res.json())
-			.then(data => {
-				this.setState({ imgs: data });
-				console.log(this.state.imgs.urls.raw);
-			})
-			.catch(err => {
-				console.log('Error happened during fetching!', err);
-			});
-	}
+	// componentDidMount() {
+	// 	fetch('https://api.unsplash.com/photos/random/?client_id=' + cred.APP_ID)
+	// 		.then(res => res.json())
+	// 		.then(data => {
+	// 			this.setState({ imgs: data });
+	// 			console.log(this.state.imgs);
+	// 		})
+	// 		.catch(err => {
+	// 			console.log('Error happened during fetching!', err);
+	// 		});
+	// }
 
 	renderImage = () => {
-		if (this.state.imgs) {
+		// if (this.state.imgs) {
 			return (
 				<img
-          src={this.state.imgs.urls.raw}
-          height={window.innerHeight}
-          width={window.innerWidth} />
+          src={'https://images.unsplash.com/photo-1508861147305-f48512b7a29b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&s=49b1f0e1d34bb69d858c6ba5c7a9326d'}
+				 />
 			)
-		}
+		// }
 	}
 
   render() {
