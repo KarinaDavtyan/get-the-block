@@ -37,7 +37,6 @@ class LogIn extends Component {
         <RaisedButton
           primary
           label="Log in with Twitter"
-          fullWidth={true}
           // onClick={this.login}
         />
       </div>
