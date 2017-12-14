@@ -1,16 +1,22 @@
-.App {
+body {
+  margin: 0px;
+}
+
+.Main {
   display: flex;
-  /*flex-direction: column;*/
+  flex-direction: column;
   z-index: 0;
-  position: relative;
   align-items: center;
   justify-content: center;
+  height: 100vh;
+  background-color: #E6ECF0;
 }
 
 .LogIn {
   display: flex;
   z-index: 1;
   position: absolute;
+  justify-content: flex-start;
 }
 
 .background {
