@@ -10,33 +10,23 @@ class LogIn extends React.Component {
   //     + `&client_id=${clientId}&redirect_uri=${redirectURI}`
   //     + `&scope=photos&state=1234zyx`;//scope
   // }
-//   login () {
-//     fetch('https://api.twitter.com/oauth/request_token') {
-//       method: "post",
-//   headers: {
-//     'Accept': 'application/json',
-//     'Content-Type': 'application/json'
-//   },
-//
-//   //make sure to serialize your JSON body
-//   body: JSON.stringify({
-//     name: myName,
-//     password: myPassword
-//   })
-// })
-// .then( (response) => {
-//    //do something awesome that makes the world a better place
-// });
-//     }
-  // }
 
-  render() {
+  async login () {
+    fetch('http://Karina-MacBookPro.local:3000/request_token')
+      .then(token => token.json())
+      .then(token => {
+        console.log(token);
+        window.location.href = `https://api.twitter.com/oauth/authenticate?oauth_token=${token}`
+      })
+  }
+
+  render () {
     return (
       <div>
         <RaisedButton
           primary
           label="Log in with Twitter"
-          // onClick={this.login}
+          onClick={this.login}
         />
       </div>
     );
