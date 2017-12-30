@@ -8,8 +8,6 @@ import {
 import Dashboard from './containers/Dashboard';
 import UserPage from './containers/UserPage';
 
-
-
 const Routes = () => (
   <Router>
     <div>
@@ -17,12 +15,6 @@ const Routes = () => (
       <Route path="/:username" component={UserPage}/>
     </div>
   </Router>
-)
-
-const UserPageParams = ({ match }) => (
-  <div>
-    <h3>ID: {match.params.username}</h3>
-  </div>
 )
 
 export default Routes;
