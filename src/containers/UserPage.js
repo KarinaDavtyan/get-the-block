@@ -10,6 +10,14 @@ class UserPage extends React.Component {
       })
   }
 
+  blockTheUser (data) {
+    fetch('http://Karina-MacBookPro.local:3000/block_it',
+      {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+  }
+
   render () {
     return (
       <div className="UserPage">
@@ -17,6 +25,11 @@ class UserPage extends React.Component {
         <button
           primary
           onClick={this.getBlockList}
+        />
+        <br/>
+        <button
+          primary
+          onClick={this.blockTheUser('arolet')}
         />
       </div>
     );
