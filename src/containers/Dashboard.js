@@ -1,14 +1,6 @@
 import React from 'react';
 import './App.css';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import LogIn from '../components/LogIn';
-
-const muiTheme = getMuiTheme({
-  palette: {
-    primary1Color: '#1DA1F2',
-  }
-});
 
 class App extends React.Component {
 
@@ -22,16 +14,14 @@ class App extends React.Component {
 
   render () {
     return (
-      <MuiThemeProvider muiTheme={muiTheme}>
-        <div className="Main">
-          <div className="LogIn">
-            <LogIn />
-          </div>
-          <div className="background">
-            {this.renderImage()}
-          </div>
+      <div className="Main">
+        <div className="LogIn">
+          <LogIn />
         </div>
-      </MuiThemeProvider>
+        <div className="background">
+          {this.renderImage()}
+        </div>
+      </div>
     );
   }
 

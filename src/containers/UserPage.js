@@ -1,16 +1,20 @@
 import React from 'react';
 
+import RaisedButton from 'material-ui/RaisedButton';
+
 class UserPage extends React.Component {
 
   state = {
+    user: window.location.pathname.slice(1),
     toBlock: '',
   }
+
 
   getBlockList = () => {
     const params = {
       method: 'GET',
     }
-    const user = window.location.pathname.slice(1);
+    const { user } = this.state;
     fetch(`http://Karina-MacBookPro.local:3000/get_the_blocks/${user}`, params)
       .then(blocks => blocks.json())
       .then(blocks => {
@@ -22,8 +26,7 @@ class UserPage extends React.Component {
     const params = {
       method: 'POST',
     }
-    const user = window.location.pathname.slice(1);
-    console.log(user, username);
+    const { user } = this.state;
     fetch('http://Karina-MacBookPro.local:3000/block_it/' + user + '/' + username, params)
   }
 
@@ -40,11 +43,13 @@ class UserPage extends React.Component {
       <div className="UserPage">
         hey UserPage
         <br/>
-        <button
+        <RaisedButton
           onClick={this.getBlockList}
+          label='get block list'
         />
-        <button
+        <RaisedButton
           onClick={this.validate}
+          label='block the input user'
         />
         <input
           value={this.state.toBlock}
