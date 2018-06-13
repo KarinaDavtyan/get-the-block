@@ -1,7 +1,9 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
 
-class LogIn extends React.Component {
+import './App.css';
+
+class EntryPage extends React.Component {
 
   login () {
     fetch('http://Karina-MacBookPro.local:3000/request_token')
@@ -13,16 +15,20 @@ class LogIn extends React.Component {
 
   render () {
     return (
-      <div>
-        <Button
-          primary
-          onClick={this.login}
-        >
-          Log in with Twitter
-        </Button>
+      <div className='entryPage'>
+        <div className='logIn'>
+          <Button
+            variant='contained'
+            size='large'
+            onClick={this.login}
+          >
+            Log in with Twitter
+          </Button>
+        </div>
       </div>
     );
   }
+
 }
 
-export default LogIn;
+export default EntryPage;
