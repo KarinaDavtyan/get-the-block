@@ -1,5 +1,5 @@
 import React from 'react';
-import RaisedButton from 'material-ui/RaisedButton';
+import Button from '@material-ui/core/Button';
 
 class LogIn extends React.Component {
 
@@ -14,11 +14,12 @@ class LogIn extends React.Component {
   render () {
     return (
       <div>
-        <RaisedButton
+        <Button
           primary
-          label="Log in with Twitter"
           onClick={this.login}
-        />
+        >
+          Log in with Twitter
+        </Button>
       </div>
     );
   }

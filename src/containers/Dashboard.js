@@ -14,11 +14,11 @@ class App extends React.Component {
 
   render () {
     return (
-      <div className="Main">
-        <div className="LogIn">
+      <div className='Main'>
+        <div className='LogIn'>
           <LogIn />
         </div>
-        <div className="background">
+        <div className='background'>
           {this.renderImage()}
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 class UserPage extends React.Component {
 
@@ -51,36 +51,39 @@ class UserPage extends React.Component {
 
   render () {
     return (
-      <div className="UserPage">
+      <div className='UserPage'>
         hey UserPage
         <br/>
-        <RaisedButton
+        <Button
           onClick={this.getBlockList}
-          label='get block list'
-        />
+        >
+          get block list
+        </Button>
         <br/>
-        <RaisedButton
+        <Button
           onClick={this.validateToBlock}
-          label='block the input user'
-        />
+        >
+          block the input user
+        </Button>
         <TextField
           value={this.state.toBlock}
           onChange={this.handleChanges}
-          id="toBlock"
-          name="toBlock"
-          hintText="toBlock"
+          id='toBlock'
+          name='toBlock'
+          helperText='toBlock'
         />
         <br/>
-        <RaisedButton
+        <Button
           onClick={this.validateToFollow}
-          label='follow the input user'
-        />
+        >
+          follow the input user
+        </Button>
         <TextField
           value={this.state.toFollow}
           onChange={this.handleChanges}
-          id="toFollow"
-          name="toFollow"
-          hintText="toFollow"
+          id='toFollow'
+          name='toFollow'
+          helperText='toFollow'
         />
       </div>
     );
